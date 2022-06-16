@@ -1,0 +1,422 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
+	..\FrameXML\UI.xsd">
+
+	<Script file="TriviaBot.lua"/>
+	<Script file="NormalQuestions.lua"/>
+	<Script file="WoWQuestions.lua"/>
+	<Script file="TurtleQuestions.lua"/>
+	<Script file="GeographyQuestions.lua"/>
+	<Frame name="Trivia" frameStrata="BACKGROUND" parent="UIParent">
+		<Frames>
+	<Frame name="TriviaGUI" frameStrata="BACKGROUND" movable="true" parent="UIParent">
+		<Size><AbsDimension x="300" y="400"/></Size>
+		<Anchors>
+			<Anchor point="CENTER"/>
+		</Anchors>
+		
+		<Backdrop name="$parentBackdrop" bgFile="Interface\TutorialFrame\TutorialFrameBackground"
+		edgeFile="Interface\DialogFrame\UI-DialogBox-Border" tile="true">
+			<EdgeSize>
+				<AbsValue val="16"/>
+			</EdgeSize>
+			<TileSize>
+				<AbsValue val="32"/>
+			</TileSize>
+			<BackgroundInsets>
+				<AbsInset left="5" right="5" top="5" bottom="5"/>
+			</BackgroundInsets>
+		</Backdrop>	
+		
+		<Layers>
+						<Layer level="ARTWORK">
+								<Texture name="TriviaGUI_Header" file="Interface\DialogFrame\UI-DialogBox-Header">
+										<Size>
+												<AbsDimension x="356" y="64"/>
+										</Size>
+										<Anchors>
+												<Anchor point="TOP">
+														<Offset>
+																<AbsDimension x="0" y="12"/>
+														</Offset>
+												</Anchor>
+										</Anchors>
+								</Texture>
+								<FontString name="TriviaHeaderLabel" inherits="GameFontNormal" text="Bennylava's TriviaBot">
+										<Anchors>
+												<Anchor point="TOP" relativeTo="TriviaGUI_Header">
+														<Offset>
+																<AbsDimension x="0" y="-14"/>
+														</Offset>
+												</Anchor>
+										</Anchors>
+								</FontString>
+						</Layer>
+				</Layers>
+		
+		<Frames>
+		
+
+		
+		<Button name="$parentButtonClose" inherits="UIPanelCloseButton">
+					<Anchors>
+							<Anchor point="TOPRIGHT" relativeTo="TriviaGUI" relativePoint="TOPRIGHT"/>
+					</Anchors>
+						<Scripts>
+							<OnClick> TriviaGUI:Hide(); TRIVIA_CONFIG.GUIENABLED = false; </OnClick>
+						</Scripts>
+				</Button> <!-- Close Button -->
+		
+
+		<Frame name="TriviaGUIQListSelect" inherits="UIDropDownMenuTemplate" enableMouse="true">
+
+				<Anchors>
+					<Anchor point="TOPRIGHT" relativePoint="TOPRIGHT" relativeTo="TriviaGUI">
+											<Offset>
+													<AbsDimension x="-130" y="-40"/>
+											</Offset>
+					</Anchor>
+				</Anchors>
+				
+				<Layers>
+					<Layer level="ARTWORK">
+						<FontString name="QuestionListLabel" inherits="GameFontNormal" text="Question List:">
+							<Anchors>
+								<Anchor point="TOPLEFT" relativePoint="TOPLEFT" relativeTo="TriviaGUI">
+									<Offset>
+										<AbsDimension x="20" y="-46"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+			</Frame>
+		
+		<Frame name="TriviaGUIChatSelect" inherits="UIDropDownMenuTemplate" enableMouse="true">
+
+							<Anchors>
+								<Anchor point="TOPRIGHT" relativePoint="BOTTOMRIGHT" relativeTo="TriviaGUIQListSelect">
+									<Offset>
+										<AbsDimension x="0" y="-1"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+				
+				<Layers>
+					<Layer level="ARTWORK">
+						<FontString name="ChatSelectLabel" inherits="GameFontNormal" text="Chat Selection:">
+							<Anchors>
+								<Anchor point="TOPLEFT" relativePoint="BOTTOMLEFT" relativeTo="QuestionListLabel">
+									<Offset>
+										<AbsDimension x="0" y="-22"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+			</Frame>
+			
+			
+<EditBox name="TriviaGUIChannelBox" letters="80" autoFocus="false">
+	<Size>
+		<AbsDimension x="100" y="32"></AbsDimension>
+	</Size>
+				<Anchors>
+					<Anchor point="TOPLEFT" relativePoint="BOTTOMLEFT" relativeTo="ChatSelectLabel">
+											<Offset>
+													<AbsDimension x="10" y="-25"/>
+											</Offset>
+					</Anchor>
+				</Anchors>
+	<Layers>
+		<Layer level="BACKGROUND">
+			<Texture file="Interface\ChatFrame\UI-ChatInputBorder-Left">
+				<Size>
+					<AbsDimension x="75" y="32"></AbsDimension>
+				</Size>
+				<Anchors>
+					<Anchor point="LEFT">
+						<Offset>
+							<AbsDimension x="-10" y="0"></AbsDimension>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<TexCoords left="0" right="0.2" top="0" bottom="1.0"></TexCoords>
+			</Texture>
+			<Texture file="Interface\ChatFrame\UI-ChatInputBorder-Right">
+				<Size>
+					<AbsDimension x="75" y="32"></AbsDimension>
+				</Size>
+				<Anchors>
+					<Anchor point="RIGHT">
+						<Offset>
+							<AbsDimension x="10" y="0"></AbsDimension>
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<TexCoords left="0.7" right="1.0" top="0" bottom="1.0"></TexCoords>
+			</Texture>
+		</Layer>
+				<Layer level="ARTWORK">
+			<FontString name = "ChannelEditBoxLabel" inherits="GameFontNormal" text="Private Channel:">
+							<Anchors>
+								<Anchor point="TOPLEFT" relativePoint="BOTTOMLEFT" relativeTo="ChatSelectLabel">
+									<Offset>
+										<AbsDimension x="0" y="-12"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+			</FontString>
+		</Layer>
+	</Layers>
+	<FontString inherits="ChatFontNormal"></FontString>
+</EditBox>
+
+<Button name="TriviaGUIChannelButton" inherits="OptionsButtonTemplate" text="Update Channel">
+     <Size><AbsDimension x="120" y="22"/></Size>
+     
+     <Anchors>
+					<Anchor point="TOPLEFT" relativePoint="TOPLEFT" relativeTo="TriviaGUIChannelBox">
+											<Offset>
+													<AbsDimension x="120" y="-4"/>
+											</Offset>
+					</Anchor>
+				</Anchors>
+   
+     <NormalFont inherits="GameFontNormal"/>
+     <HighlightFont inherits="GameFontHighlight"/>
+     
+     				<Scripts>
+					<OnClick>
+						TriviaGUI_ChannelButton_OnClick();
+					</OnClick>
+				</Scripts>
+</Button>
+			
+
+			
+						<CheckButton name="TriviaGUIShowAnswerCheckBox" inherits="OptionsCheckButtonTemplate" id="1">
+							<Anchors>
+								<Anchor point="TOPLEFT" relativePoint="BOTTOMLEFT" relativeTo="TriviaGUIChannelButton">
+									<Offset>
+										<AbsDimension x="0" y="-5"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						<Scripts>
+			<OnClick>
+				TriviaGUIShowAnswerCheckBox_OnClick();
+
+			</OnClick>	
+		</Scripts>
+				<Layers>
+					<Layer level="ARTWORK">
+						<FontString name="ShowAnswerLabel" inherits="GameFontNormal" text="Show Answers:">
+							<Anchors>
+								<Anchor point="TOPLEFT" relativePoint="BOTTOMLEFT" relativeTo="TriviaGUIChannelBox">
+									<Offset>
+										<AbsDimension x="-10" y="-7"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+			</CheckButton>
+			
+		<CheckButton name="TriviaGUIReportCheckBox" inherits="OptionsCheckButtonTemplate" id="1">
+							<Anchors>
+								<Anchor point="TOPLEFT" relativePoint="BOTTOMLEFT" relativeTo="TriviaGUIShowAnswerCheckBox">
+									<Offset>
+										<AbsDimension x="0" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						<Scripts>
+			<OnClick>
+				TriviaGUIReportCheckBox_OnClick();
+
+			</OnClick>	
+		</Scripts>
+				<Layers>
+					<Layer level="ARTWORK">
+						<FontString inherits="GameFontNormal" text="Report Scores:">
+							<Anchors>
+								<Anchor point="TOPLEFT" relativePoint="BOTTOMLEFT" relativeTo="ShowAnswerLabel">
+									<Offset>
+										<AbsDimension x="0" y="-20"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+			</CheckButton>
+			
+			
+			<Button name="TriviaGUIStartStopButton" inherits="OptionsButtonTemplate" text="Start Trivia">
+     <Size><AbsDimension x="120" y="22"/></Size>
+     
+     <Anchors>
+					<Anchor point="BOTTOM" relativePoint="BOTTOM" relativeTo="TriviaGUI">
+											<Offset>
+													<AbsDimension x="0" y="20"/>
+											</Offset>
+					</Anchor>
+				</Anchors>
+   
+     <NormalFont inherits="GameFontNormal"/>
+     <HighlightFont inherits="GameFontHighlight"/>
+     
+     				<Scripts>
+					<OnClick>
+						TriviaGUI_StartStopButton_OnClick();
+					</OnClick>
+				</Scripts>
+</Button>
+
+			<Button name="TriviaGUISkipButton" inherits="OptionsButtonTemplate" text="Skip Question">
+     <Size><AbsDimension x="120" y="22"/></Size>
+     
+     <Anchors>
+					<Anchor point="BOTTOM" relativePoint="TOP" relativeTo="TriviaGUIStartStopButton">
+											<Offset>
+													<AbsDimension x="0" y="5"/>
+											</Offset>
+					</Anchor>
+				</Anchors>
+   
+     <NormalFont inherits="GameFontNormal"/>
+     <HighlightFont inherits="GameFontHighlight"/>
+     
+     				<Scripts>
+					<OnClick>
+						Trivia_SkipQuestion();
+						TriviaGUISkipButton:Disable();
+					</OnClick>
+				</Scripts>
+</Button>
+
+		<Frame name="TriviaGUIIntervalSelect" inherits="UIDropDownMenuTemplate" enableMouse="true">
+
+							<Anchors>
+								<Anchor point="TOPRIGHT" relativePoint="BOTTOMRIGHT" relativeTo="TriviaGUIChatSelect">
+									<Offset>
+										<AbsDimension x="0" y="-112"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+				
+				<Layers>
+					<Layer level="ARTWORK">
+						<FontString name="IntervalSelectLabel" inherits="GameFontNormal" text="Interval:">
+							<Anchors>
+								<Anchor point="TOPLEFT" relativePoint="BOTTOMLEFT" relativeTo="ChatSelectLabel">
+									<Offset>
+										<AbsDimension x="0" y="-128"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+			</Frame>
+				<Frame name="TriviaGUIRoundSizeSelect" inherits="UIDropDownMenuTemplate" enableMouse="true">
+
+							<Anchors>
+								<Anchor point="TOPRIGHT" relativePoint="BOTTOMRIGHT" relativeTo="TriviaGUIIntervalSelect">
+									<Offset>
+										<AbsDimension x="0" y="-1"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+				
+				<Layers>
+					<Layer level="ARTWORK">
+						<FontString name="RoundSizeSelectLabel" inherits="GameFontNormal" text="Round Size:">
+							<Anchors>
+								<Anchor point="TOPLEFT" relativePoint="BOTTOMLEFT" relativeTo="IntervalSelectLabel">
+									<Offset>
+										<AbsDimension x="0" y="-22"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+			</Frame>
+				<Frame name="TriviaGUITimeoutSelect" inherits="UIDropDownMenuTemplate" enableMouse="true">
+
+							<Anchors>
+								<Anchor point="TOPRIGHT" relativePoint="BOTTOMRIGHT" relativeTo="TriviaGUIRoundSizeSelect">
+									<Offset>
+										<AbsDimension x="0" y="-1"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+				
+				<Layers>
+					<Layer level="ARTWORK">
+						<FontString name="TimeoutSelectLabel" inherits="GameFontNormal" text="Question Timeouts:">
+							<Anchors>
+								<Anchor point="TOPLEFT" relativePoint="BOTTOMLEFT" relativeTo="RoundSizeSelectLabel">
+									<Offset>
+										<AbsDimension x="0" y="-22"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<FontString name="InformationLabel" inherits="GameFontNormal" text="">
+							<Anchors>
+								<Anchor point="TOPLEFT" relativePoint="BOTTOM" relativeTo="TriviaGUI">
+									<Offset>
+										<AbsDimension x="-106" y="17"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+			</Frame>
+		
+
+			
+		</Frames>
+		
+		<Scripts>
+			<OnMouseDown>
+				if ( arg1 == "LeftButton" ) then
+					this:StartMoving();
+				end
+			</OnMouseDown>
+			<OnMouseUp>
+				if ( arg1 == "LeftButton" ) then
+					this:StopMovingOrSizing();
+				end
+			</OnMouseUp>
+			<OnHide>
+				this:StopMovingOrSizing();
+			</OnHide>
+			
+		</Scripts>
+		
+		</Frame>
+		</Frames>
+		<Scripts>
+			<OnLoad>
+				this.TimeSinceLastUpdate = 0
+				Trivia_OnLoad();
+			</OnLoad>
+			<OnUpdate>
+				Trivia_OnUpdate(arg1);
+			</OnUpdate>
+			<OnEvent>
+				Trivia_OnEvent(event);
+			</OnEvent>
+
+		</Scripts>
+	</Frame>
+
+
+</Ui>

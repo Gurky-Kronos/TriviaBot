@@ -1,0 +1,16 @@
+## Interface: 11200
+## Title: TriviaBot|cff1fff1f[Turtle WoW|r
+## Notes: Fun in game Trivia addon.
+## Author: Gurky
+## Version: 1.0
+## SavedVariables:TRIVIA_CONFIG
+
+TriviaBot.lua
+TriviaBot.xml
+
+!!!Libs\Ace2\AceLibrary\AceLibrary.lua
+!!!Libs\Ace2\AceOO-2.0\AceOO-2.0.lua
+!!!Libs\Ace2\AceConsole-2.0\AceConsole-2.0.lua
+!!!Libs\Ace2\AceComm-2.0\AceComm-2.0.lua
+!!!Libs\PT2\PeriodicTable-Core-2.0\PeriodicTable-Core-2.0.lua
+!!!Libs\ParserLib\ParserLib.lua
