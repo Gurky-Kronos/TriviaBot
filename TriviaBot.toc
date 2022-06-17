@@ -1,5 +1,5 @@
 ## Interface: 11200
-## Title: TriviaBot|cff1fff1f[Turtle WoW|r
+## Title: |cffff8000TriviaBot|r|cff1fff1f [Turtle WoW]|r
 ## Notes: Fun in game Trivia addon.
 ## Author: Gurky
 ## Version: 1.0
@@ -10,7 +10,85 @@ TriviaBot.xml
 
 !!!Libs\Ace2\AceLibrary\AceLibrary.lua
 !!!Libs\Ace2\AceOO-2.0\AceOO-2.0.lua
+!!!Libs\Compost-2.0\Compost-2.0.lua
+!!!Libs\Ace2\AceEvent-2.0\AceEvent-2.0.lua
 !!!Libs\Ace2\AceConsole-2.0\AceConsole-2.0.lua
+!!!Libs\Ace2\AceAddon-2.0\AceAddon-2.0.lua
+!!!Libs\Ace2\AceDB-2.0\AceDB-2.0.lua
+!!!Libs\Ace2\AceDebug-2.0\AceDebug-2.0.lua
+!!!Libs\Ace2\AceHook-2.0\AceHook-2.0.lua
+!!!Libs\Ace2\AceHook-2.1\AceHook-2.1.lua
+!!!Libs\Ace2\AceLocale-2.0\AceLocale-2.0.lua
+!!!Libs\Ace2\AceLocale-2.1\AceLocale-2.1.lua
+!!!Libs\Ace2\AceLocale-2.2\AceLocale-2.2.lua
+!!!Libs\Ace2\AceTab-2.0\AceTab-2.0.lua
 !!!Libs\Ace2\AceComm-2.0\AceComm-2.0.lua
+!!!Libs\Ace2\AceModuleCore-2.0\AceModuleCore-2.0.lua
+!!!Libs\Metrognome-2.0\Metrognome-2.0.lua
+!!!Libs\Deformat-2.0\Deformat-2.0.lua
+!!!Libs\Gratuity-2.0\Gratuity-2.0.lua
+!!!Libs\SE\SpecialEvents-Aura-2.0\SpecialEvents-Aura-2.0.lua
+!!!Libs\SE\SpecialEvents-Bags-2.0\SpecialEvents-Bags-2.0.lua
+!!!Libs\SE\SpecialEvents-Keys-2.0\SpecialEvents-Keys-2.0.lua
+!!!Libs\SE\SpecialEvents-LearnSpell-2.0\SpecialEvents-LearnSpell-2.0.lua
+!!!Libs\SE\SpecialEvents-Mail-2.0\SpecialEvents-Mail-2.0.lua
+!!!Libs\SE\SpecialEvents-Mount-2.0\SpecialEvents-Mount-2.0.lua
+!!!Libs\SE\SpecialEvents-Movement-2.0\SpecialEvents-Movement-2.0.lua
+!!!Libs\SE\SpecialEvents-Breath-2.0\SpecialEvents-Breath-2.0.lua
+!!!Libs\SE\SpecialEvents-Equipped-2.0\SpecialEvents-Equipped-2.0.lua
+!!!Libs\Babble\Babble-Boss-2.0\Babble-Boss-2.0.lua
+!!!Libs\Babble\Babble-Class-2.0\Babble-Class-2.0.lua
+!!!Libs\Babble\Babble-Race-2.0\Babble-Race-2.0.lua
+!!!Libs\Babble\Babble-Spell-2.0\Babble-Spell-2.0.lua
+!!!Libs\Babble\Babble-SpellTree-2.0\Babble-SpellTree-2.0.lua
+!!!Libs\Babble\Babble-Zone-2.0\Babble-Zone-2.0.lua
+!!!Libs\Babble\Babble-Boss-2.1\Babble-Boss-2.1.lua
+!!!Libs\Babble\Babble-Class-2.1\Babble-Class-2.1.lua
+!!!Libs\Babble\Babble-Race-2.1\Babble-Race-2.1.lua
+!!!Libs\Babble\Babble-Spell-2.1\Babble-Spell-2.1.lua
+!!!Libs\Babble\Babble-SpellTree-2.1\Babble-SpellTree-2.1.lua
+!!!Libs\Babble\Babble-Zone-2.1\Babble-Zone-2.1.lua
+!!!Libs\Babble\Babble-Boss-2.2\Babble-Boss-2.2.lua
+!!!Libs\Babble\Babble-Class-2.2\Babble-Class-2.2.lua
+!!!Libs\Babble\Babble-Race-2.2\Babble-Race-2.2.lua
+!!!Libs\Babble\Babble-Spell-2.2\Babble-Spell-2.2.lua
+!!!Libs\Babble\Babble-SpellTree-2.2\Babble-SpellTree-2.2.lua
+!!!Libs\Babble\Babble-Zone-2.2\Babble-Zone-2.2.lua
+!!!Libs\PT\Core\PTEmbed.lua
+!!!Libs\PT\TradeSkills\PTTradeskillsEmbed.lua
+!!!Libs\PT\Elements\Misc\PTEmbedElemMisc.lua
+!!!Libs\PT\Elements\EquipSets\PTEmbedElemEquipSets.lua
+!!!Libs\PT\Elements\Food\PTEmbedElemFood.lua
+!!!Libs\PT\Elements\Instance\PTEmbedElemInstance.lua
+!!!Libs\PT\Elements\Raid\PTEmbedElemRaid.lua
+!!!Libs\PT\Elements\Tradeskills\PTEmbedElemTradeskill.lua
+!!!Libs\PT\Elements\AQ\PTEmbedElemAhnQiraj.lua
+!!!Libs\PT\Elements\ZG\PTEmbedElemZulGurub.lua
 !!!Libs\PT2\PeriodicTable-Core-2.0\PeriodicTable-Core-2.0.lua
+!!!Libs\PT2\PeriodicTable-Misc-2.0\PeriodicTable-Misc-2.0.lua
+!!!Libs\Dewdrop-2.0\Dewdrop-2.0.lua
+!!!Libs\Tablet-2.0\Tablet-2.0.lua
+!!!Libs\FuBarPlugin-2.0\FuBarPlugin-2.0.lua
+!!!Libs\Crayon-2.0\Crayon-2.0.lua
+!!!Libs\Jostle-2.0\Jostle-2.0.lua
+!!!Libs\RosterLib-2.0\RosterLib-2.0.lua
+!!!Libs\Abacus-2.0\Abacus-2.0.lua
+!!!Libs\Tourist-2.0\Tourist-2.0.lua
+!!!Libs\Glory-2.0\Glory-2.0.lua
+!!!Libs\PaintChips-2.0\PaintChips-2.0.lua
+!!!Libs\TipLib-1.0\TipLib-1.0.lua
+!!!Libs\SpellCache-1.0\SpellCache-1.0.lua
+!!!Libs\SpellStatus-1.0\SpellStatus-1.0.lua
+!!!Libs\SpellStatus-AimedShot-1.0\SpellStatus-AimedShot-1.0.lua
+!!!Libs\Banzai-1.0\Banzai-1.0.lua
 !!!Libs\ParserLib\ParserLib.lua
+!!!Libs\ParserLib\FixGlobalString.lua
+!!!Libs\ParserLib\optimizer-enUS.lua
+!!!Libs\ParserLib\optimizer-koKR.lua
+!!!Libs\ProximityLib\ProximityLib.lua
+!!!Libs\Vector-2.0\Vector-2.0.lua
+!!!Libs\ItemClasses-2.0\ItemClasses-2.0.lua
+!!!Libs\OneStorage-2.0\OneStorage-2.0.lua
+!!!Libs\Surface-1.0\Surface-1.0.lua
+!!!Libs\Quixote-1.0\Quixote-1.0.lua
+!!!Libs\FAIAP.lua

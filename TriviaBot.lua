@@ -398,7 +398,7 @@ function Trivia_OnEvent(event)
 	elseif (event == "START_ANNOUNCE") then
 		if (TRIVIA_CONFIG.ROUND_SIZE == 0) then
 			Trivia_SendMessage("TriviaBot started");
-			Trivia_SendMessage("TriviaBot started [" .. TRIVIA_CONFIG.ROUND_SIZE .. " question round]");
+			Trivia_SendMessage("TriviaBot started [Unlimited question round]");
 			Trivia_SendMessage("Submit Questions to Gurky @ https://github.com/Gurky-Kronos/TriviaBot/issues");			
 		else
 			Trivia_SendMessage("TriviaBot started [" .. TRIVIA_CONFIG.ROUND_SIZE .. " question round]");
@@ -739,6 +739,7 @@ function Trivia_Start()
 		
 		-- GUI Functions:
 		TriviaGUIStartStopButton:SetText("Stop Trivia");
+		TriviaGUIStartStopButton:SetNormalTexture("Interface\\AddOns\\TriviaBot\\images\\stop.tga")
 	end
 end
 
@@ -756,6 +757,7 @@ function Trivia_Stop(supressMessage)
 	
 	-- GUI Updates
 	TriviaGUIStartStopButton:SetText("Start Trivia");
+	TriviaGUIStartStopButton:SetNormalTexture("Interface\\AddOns\\TriviaBot\\images\\start.tga")
 	TriviaGUISkipButton:Disable();
 end
 
@@ -984,7 +986,7 @@ function Trivia_ConsoleMessage(msg)
 	-- Check the default frame exists
 	if (DEFAULT_CHAT_FRAME) then
 		-- Format the message
-		msg = MAGENTA .. "Trivia: " .. WHITE .. msg;
+		msg = "|cffff8000Trivia: |r" .. WHITE .. msg;
 		DEFAULT_CHAT_FRAME:AddMessage(msg);
 	end
 end
@@ -1066,8 +1068,37 @@ function Trivia_GUIUpdate()
 	end
 	
 	-- Version Code
-	TriviaHeaderLabel:SetText("TriviaBot [Turtle WoW]" .. TRIVIA_VERSION);
-	
+	TriviaHeaderLabel:SetText("TriviaBot |cff1fff1f[Turtle WoW]|r");
+	TriviaHeaderLabel:SetFont("Fonts\\FRIZQT__.TTF", 14, "OUTLINE, ");
+	TriviaHeaderLabel:SetTextColor(1.0, 0.55, 0.0);
+	version:SetText("Version: " .. TRIVIA_VERSION);
+	version:SetFont("Fonts\\FRIZQT__.TTF", 12, "OUTLINE, ");
+	version:SetTextColor(1.0, 0.55, 0.0);
+	QuestionListLabel:SetFont("Fonts\\FRIZQT__.TTF", 14, "OUTLINE, ");
+	QuestionListLabel:SetTextColor(1.0, 0.55, 0.0);
+	ChatSelectLabel:SetFont("Fonts\\FRIZQT__.TTF", 14, "OUTLINE, ");
+	ChatSelectLabel:SetTextColor(1.0, 0.55, 0.0);
+	ChannelEditBoxLabel:SetFont("Fonts\\FRIZQT__.TTF", 14, "OUTLINE, ");
+	ChannelEditBoxLabel:SetTextColor(1.0, 0.55, 0.0);
+	ShowAnswerLabel:SetFont("Fonts\\FRIZQT__.TTF", 14, "OUTLINE, ");
+	ShowAnswerLabel:SetTextColor(1.0, 0.55, 0.0);
+	ReportScoresLabel:SetFont("Fonts\\FRIZQT__.TTF", 14, "OUTLINE, ");
+	ReportScoresLabel:SetTextColor(1.0, 0.55, 0.0);
+	IntervalSelectLabel:SetFont("Fonts\\FRIZQT__.TTF", 14, "OUTLINE, ");
+	IntervalSelectLabel:SetTextColor(1.0, 0.55, 0.0);
+	RoundSizeSelectLabel:SetFont("Fonts\\FRIZQT__.TTF", 14, "OUTLINE, ");
+	RoundSizeSelectLabel:SetTextColor(1.0, 0.55, 0.0);
+	TimeoutSelectLabel:SetFont("Fonts\\FRIZQT__.TTF", 14, "OUTLINE, ");
+	TimeoutSelectLabel:SetTextColor(1.0, 0.55, 0.0);
+	ShowLabel:SetFont("Fonts\\FRIZQT__.TTF", 14, "OUTLINE, ");
+	ShowLabel:SetTextColor(1.0, 0.55, 0.0);
+	TriviaGUIStartStopButton:SetFont("Fonts\\FRIZQT__.TTF", 14, "OUTLINE, ");
+	TriviaGUIStartStopButton:SetTextColor(1.0, 0.55, 0.0);
+	TriviaGUISkipButton:SetFont("Fonts\\FRIZQT__.TTF", 14, "OUTLINE, ");
+	TriviaGUISkipButton:SetTextColor(1.0, 0.55, 0.0);
+	TriviaGUIChannelButton:SetFont("Fonts\\FRIZQT__.TTF", 14, "OUTLINE, ");
+	TriviaGUIChannelButton:SetTextColor(1.0, 0.55, 0.0);
+
 	-- The check buttons
 	TriviaGUIShowAnswerCheckBox:SetChecked(TRIVIA_CONFIG.SHOW_ANSWERS);
 	TriviaGUIReportCheckBox:SetChecked(TRIVIA_CONFIG.SHOW_REPORTS);
