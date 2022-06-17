@@ -5,10 +5,18 @@
 Trivia is a fun trivia bot which gives you something to do while you are doing things such as Grinding or just idling at home while others want to have some fun.
 
 Trivia List:
+
 **WoW** - Vanilla WoW related trivia.
+
 **Normal** - Random trivia about anything.
+
 **Turtle** - Turtle WoW specific trivia (WiP).
+
 **Geography** - Trivia about Geography.
+
+
+
+**COMMANDS:**
 
 **/trivia** - Shows the Trivia GUI.
 
