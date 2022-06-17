@@ -1340,6 +1340,8 @@ NORMAL_TRIVIA_ANSWERS2[351] = "0";
 
 NORMAL_TRIVIA_QUESTIONS[352] = "(Science&Nature): What does the male Emperor Penguine balance atop his feet for two months while its mate feeds?";
 NORMAL_TRIVIA_ANSWERS1[352] = "An egg";
+NORMAL_TRIVIA_ANSWERS1[352] = "A egg";
+NORMAL_TRIVIA_ANSWERS1[352] = "egg";
 
 NORMAL_TRIVIA_QUESTIONS[353] = "(Science&Nature): What tracking device was the Stealth bomber designed to evade?";
 NORMAL_TRIVIA_ANSWERS1[353] = "Radar";

@@ -10,3 +10,12 @@ TURTLE_TRIVIA_ANSWERS8 = {};
 
 TURTLE_TRIVIA_QUESTIONS[1] = "What is the server mascott?";
 TURTLE_TRIVIA_ANSWERS1[1] = "Turtle";
+
+TURTLE_TRIVIA_QUESTIONS[2] = "What is the server mascott?";
+TURTLE_TRIVIA_ANSWERS1[2] = "Turtle";
+
+TURTLE_TRIVIA_QUESTIONS[3] = "What is the server mascott?";
+TURTLE_TRIVIA_ANSWERS1[3] = "Turtle";
+
+TURTLE_TRIVIA_QUESTIONS[4] = "What is the server mascott?";
+TURTLE_TRIVIA_ANSWERS1[4] = "Turtle";

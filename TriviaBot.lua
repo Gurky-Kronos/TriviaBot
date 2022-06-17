@@ -736,6 +736,7 @@ function Trivia_Start()
 		-- Reset Round and Report Counters
 		TRIVIA_REPORT_COUNTER = 0;
 		TRIVIA_ROUND_COUNTER = 0;
+		TRIVIA_ACTIVE_QUESTION = 0;
 		
 		-- GUI Functions:
 		TriviaGUIStartStopButton:SetText("Stop Trivia");
