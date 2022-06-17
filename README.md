@@ -1,21 +1,29 @@
-TriviaBot [Turtle Wow]
+**TriviaBot [Turtle Wow]**
+
+![image](https://user-images.githubusercontent.com/90982783/174229434-487ca2ce-ac08-4a41-9aa7-f270ef17605c.png)
 
 Trivia is a fun trivia bot which gives you something to do while you are doing things such as Grinding or just idling at home while others want to have some fun.
 
-/trivia - Shows the Trivia GUI.
+Trivia List:
+**WoW** - Vanilla WoW related trivia.
+**Normal** - Random trivia about anything.
+**Turtle** - Turtle WoW specific trivia (WiP).
+**Geography** - Trivia about Geography.
 
-/trivia channel [ PARTY | RAID | GUILD | <custom channel> ] - Sets the trivia channel.
+**/trivia** - Shows the Trivia GUI.
 
-/trivia start	- Starts the trivia game.
+**/trivia channel [ PARTY | RAID | GUILD | <custom channel> ]** - Sets the trivia channel.
 
-/trivia stop 	- Stops the current game.
+**/trivia start**	- Starts the trivia game.
 
-/trivia skip 	- Skips the current question.
+**/trivia stop**	- Stops the current game.
 
-/trivia shuffle - Reshuffles the questions (restarts from beginning)
+**/trivia skip** 	- Skips the current question.
 
-/trivia clear   - Clears the scores.
+**/trivia shuffle** - Reshuffles the questions (restarts from beginning)
 
-/trivia qlist [wow|normal|turtle|geography] -  Select the question list.
+**/trivia clear**   - Clears the scores.
 
-/trivia help    - In-game help display
+**/trivia qlist [wow|normal|turtle|geography]** -  Select the question list.
+
+**/trivia help**   - In-game help display
